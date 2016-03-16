@@ -1,0 +1,136 @@
+/*Design Elements of page*/
+
+header, footer {
+ display: block;
+ margin: 3px;
+ padding: 2px;
+ min-height: 43px;
+ text-align: center;
+ background: 	#000000;
+ }
+
+h1 {
+   font-family: sans-serif;
+   font-size: 16px;
+   color: 	#740001;
+   text-align: center;
+  }
+
+  h3 {
+     font-family: Helvetica;
+     font-size: 42px;
+     color: Red;
+     text-align: left;
+      padding: 0px;
+    }
+  h4 {
+       font-family: sans-serif;
+       font-size: 20px;
+       color: White;
+       text-align: right;
+        padding: 0px;
+      }
+
+body {
+     font-size: 14px;
+     font-family: sans-serif;
+     background: #dddddf;
+    }
+
+
+/*Layout Element of page*/
+  #main {
+   min-height: 800px;
+   margin: 0px;
+   padding: 0px;
+   display: -webkit-flex;
+   display:         flex;
+   -webkit-flex-flow: row;
+           flex-flow: row;
+   }
+
+  #main > article {
+   margin: 4px;
+   padding:10px;
+   border: 1px solid #cccc33;
+   background: #000000;
+   color: #c0c5ce;
+   -webkit-flex: 3 1 70%;
+           flex: 3 1 70%;
+   -webkit-order: 1;
+           order: 1;
+   }
+
+  #main > nav {
+   margin: 4px;
+   padding: 5px;
+   border: 1px solid #8888bb;
+   background: #000000;
+   text-align: center;
+   color: #c0c5ce;
+   -webkit-flex: 1 6 30%;
+           flex: 1 6 30%;
+   -webkit-order: 2;
+           order: 2;
+   }
+
+/*Layout Element of page when the page is too narrow (flexbox)*/
+  @media all and (max-width: 640px) {
+
+   #main {
+    -webkit-flex-flow: column;
+            flex-direction: column;
+   }
+
+   #main > article #main > nav,{
+    /* Return them to document order */
+    -webkit-order: 0;
+            order: 0;
+   }
+
+   #main > nav, header, footer {
+    min-height: 40px;
+    /*max-height: 40px;*/
+   }
+  }
+
+  /*Design Elements of page when page is too narrow (flexbox)*/
+  .flex
+     {
+        /* basic styling */
+        width: 350px;
+        height: 200px;
+        border: 1px solid #555;
+        font: 12px Arial;
+
+        /* flexbox setup */
+        display: -webkit-flex;
+        -webkit-flex-direction: row;
+
+        display: flex;
+        flex-direction: row;
+     }
+
+     .flex > div
+     {
+        -webkit-flex: 1 1 auto;
+        flex: 1 1 auto;
+
+        width: 30px;
+        -webkit-transition: width 0.7s ease-out;
+        transition: width 0.7s ease-out;
+     }
+
+     img {
+       width: 80%;
+     }
+
+     /* colors */
+     /*.flex > div:nth-child(1){ background : #009246; }
+     .flex > div:nth-child(2){ background : #F1F2F1; }
+     .flex > div:nth-child(3){ background : #CE2B37; }*/
+
+     .flex > div:hover
+     {
+          width: 100px;
+     }
